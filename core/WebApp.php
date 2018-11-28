@@ -9,9 +9,7 @@
 namespace USC;
 
 use USC\interfaces;
-use USC\lib\MethodNotAllowedResponse;
 use USC\lib\PageNotFoundResponse;
-use USC\lib\ReadOnlyCollection;
 
 
 /**
@@ -45,7 +43,8 @@ abstract class WebApp extends App implements interfaces\WebApp
         return $this->request;
     }
 
-    public function getRouter() {
+    public function getRouter()
+    {
         return $this->router;
     }
 

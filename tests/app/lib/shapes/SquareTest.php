@@ -5,13 +5,15 @@
  * Date: 11/28/18
  * Time: 1:02 PM
  */
+
 use App\lib\shapes\Square;
 use USC\lib\ReadOnlyCollection;
 
 
 class SquareTest extends \PHPUnit\Framework\TestCase
 {
-    public function testParametersProcessing() {
+    public function testParametersProcessing()
+    {
         $square = new Square(new ReadOnlyCollection([
             'size' => 50
         ]));
@@ -32,7 +34,8 @@ class SquareTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals('Square with sides sizes 15 pixels of #FFFFFF color', $square->getResult());
     }
 
-    public function testWrongParametersDoesntBreakAnything() {
+    public function testWrongParametersDoesntBreakAnything()
+    {
         $square = new Square(new ReadOnlyCollection([
             'siz' => 40,
         ]));

@@ -29,7 +29,8 @@ abstract class BaseResponse implements interfaces\Response
     /**
      * @return libInterfaces\ReadOnlyCollection
      */
-    public function getParams() {
+    public function getParams()
+    {
         return $this->params;
     }
 }

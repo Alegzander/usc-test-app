@@ -5,12 +5,14 @@
  * Date: 11/28/18
  * Time: 3:00 AM
  */
+
 use USC\lib\Collection;
 
 
 final class CollectionTest extends \PHPUnit\Framework\TestCase
 {
-    public function testSimpleReadAndEditMethods(){
+    public function testSimpleReadAndEditMethods()
+    {
         $collection = new Collection([
             'a' => 'b',
             'c' => 'd'
@@ -24,7 +26,8 @@ final class CollectionTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals('f', $collection->get('e'));
     }
 
-    public function testReplaceValue(){
+    public function testReplaceValue()
+    {
         $collection = new Collection([
             'a' => 'b'
         ]);

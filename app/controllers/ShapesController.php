@@ -5,12 +5,12 @@
  * Date: 11/28/18
  * Time: 6:31 AM
  */
+
 namespace App\controllers;
 
-use App\lib\shapes\Circle;
-use App\lib\shapes\interfaces\Shape;
-use App\lib\shapes\Square;
 use App\lib\Response;
+use App\lib\shapes\Circle;
+use App\lib\shapes\Square;
 use USC\base\BaseController;
 use USC\interfaces\Request;
 use USC\lib\BadRequestResponse;
@@ -19,7 +19,8 @@ use USC\lib\ReadOnlyCollection;
 
 class ShapesController extends BaseController
 {
-    protected static function shapesMap($type = null) {
+    protected static function shapesMap($type = null)
+    {
         $map = [
             'circle' => Circle::class,
             'square' => Square::class
@@ -28,7 +29,8 @@ class ShapesController extends BaseController
         return $map[$type];
     }
 
-    public function post(Request $request){
+    public function post(Request $request)
+    {
         $data = $request->getBody();
 
         if (!is_array($data) or !array_key_exists('shapes', $data)) {

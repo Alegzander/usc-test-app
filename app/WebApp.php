@@ -8,9 +8,9 @@
 
 namespace App;
 
+use App\controllers;
 use USC\interfaces;
 use USC\WebApp as BaseWebApp;
-use App\controllers;
 
 
 class WebApp extends BaseWebApp implements interfaces\WebApp
