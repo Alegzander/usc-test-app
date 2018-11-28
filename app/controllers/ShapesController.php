@@ -9,8 +9,7 @@
 namespace App\controllers;
 
 use App\lib\Response;
-use App\lib\shapes\Circle;
-use App\lib\shapes\Square;
+use App\lib\shapes\ShapesFactory;
 use USC\base\BaseController;
 use USC\interfaces\Request;
 use USC\lib\BadRequestResponse;
@@ -19,16 +18,6 @@ use USC\lib\ReadOnlyCollection;
 
 class ShapesController extends BaseController
 {
-    protected static function shapesMap($type = null)
-    {
-        $map = [
-            'circle' => Circle::class,
-            'square' => Square::class
-        ];
-
-        return $map[$type];
-    }
-
     public function post(Request $request)
     {
         $data = $request->getBody();
@@ -51,17 +40,9 @@ class ShapesController extends BaseController
                 ]));
             }
 
-            $shapeCLass = self::shapesMap($type);
-
-            if (!$shapeCLass) {
-                return new BadRequestResponse($request, new ReadOnlyCollection([
-                    'message' => sprintf('Invalid shape type "%s".', $type)
-                ]));
-            }
-
             try {
-                $shapes[] = new $shapeCLass(new ReadOnlyCollection($params));
-            } catch (\RuntimeException $exception) {
+                $shapes[] = ShapesFactory::getShape($type, new ReadOnlyCollection($params));
+            } catch (\InvalidArgumentException $exception) {
                 return new BadRequestResponse($request, new ReadOnlyCollection([
                     'message' => $exception->getMessage()
                 ]));
