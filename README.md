@@ -91,6 +91,8 @@ With provided body best way to extend shapes is to add shapes into `app/lib/shap
 
 All shapes should implement interface `Shape` (`app/lib/shapes/interfaces/Shape.php`).
 
-And than add them to mapping in `ShapeController`. Method `shapesMap`.
+Add condition into `ShapeFactory` in `app/lib/shapes/ShapeFactory.php` with new shape.
 
 That's basically it.
+
+Hope you'll like it = )
