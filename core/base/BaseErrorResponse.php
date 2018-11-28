@@ -55,7 +55,8 @@ abstract class BaseErrorResponse extends BaseResponse implements Response
         }
     }
 
-    public function renderJson(){
+    public function renderJson()
+    {
         header('Content-Type: application/json');
 
         return json_encode([
@@ -64,7 +65,8 @@ abstract class BaseErrorResponse extends BaseResponse implements Response
         ]);
     }
 
-    public function renderHtml() {
+    public function renderHtml()
+    {
         header('Content-Type: text/html');
 
         $context = [

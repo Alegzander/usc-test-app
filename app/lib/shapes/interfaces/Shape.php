@@ -14,5 +14,6 @@ use USC\lib\interfaces\ReadOnlyCollection;
 interface Shape
 {
     public function __construct(ReadOnlyCollection $params);
+
     public function getResult();
 }

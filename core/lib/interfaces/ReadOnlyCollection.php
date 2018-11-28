@@ -12,5 +12,6 @@ namespace USC\lib\interfaces;
 interface ReadOnlyCollection
 {
     public function __construct(array $data);
+
     public function get($key, $defaultValue = null);
 }

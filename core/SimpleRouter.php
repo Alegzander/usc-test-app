@@ -9,7 +9,6 @@
 namespace USC;
 
 use USC\interfaces;
-use USC\lib\PageNotFoundResponse;
 
 
 class SimpleRouter implements interfaces\Router

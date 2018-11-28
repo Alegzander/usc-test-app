@@ -5,13 +5,15 @@
  * Date: 11/28/18
  * Time: 2:14 AM
  */
+
 use PHPUnit\Framework\TestCase;
 use USC\lib\ReadOnlyCollection;
 
 
 final class ReadOnlyCollectionTest extends TestCase
 {
-    public function testCanReadSetValueFromCollection(){
+    public function testCanReadSetValueFromCollection()
+    {
         $collection = new ReadOnlyCollection([
             'a' => 'b',
             'c' => 'd'
@@ -21,7 +23,8 @@ final class ReadOnlyCollectionTest extends TestCase
         $this->assertEquals('d', $collection->get('c'));
     }
 
-    public function testGetDefaultValueForNoneExistingKey(){
+    public function testGetDefaultValueForNoneExistingKey()
+    {
         $collection = new ReadOnlyCollection([
             'e' => 'f',
             'g' => 'h'
@@ -31,7 +34,8 @@ final class ReadOnlyCollectionTest extends TestCase
         $this->assertEquals('j', $collection->get('c', 'j'));
     }
 
-    public function testGetNullForNoneExistingValuesWithoutDefaultValue(){
+    public function testGetNullForNoneExistingValuesWithoutDefaultValue()
+    {
         $collection = new ReadOnlyCollection([
             'i' => 'j',
             'k' => 'l'

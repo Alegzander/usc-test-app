@@ -5,13 +5,15 @@
  * Date: 11/28/18
  * Time: 12:53 PM
  */
+
 use App\lib\shapes\Circle;
 use USC\lib\ReadOnlyCollection;
 
 
 final class CircleTest extends \PHPUnit\Framework\TestCase
 {
-    public function testParametersProcessing() {
+    public function testParametersProcessing()
+    {
         $circle = new Circle(new ReadOnlyCollection([
             'radius' => 20
         ]));
@@ -32,7 +34,8 @@ final class CircleTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals('Circle with radius 8 of #CCCCBB color', $circle->getResult());
     }
 
-    public function testWrongParametersDoesntBreakAnything() {
+    public function testWrongParametersDoesntBreakAnything()
+    {
         $circle = new Circle(new ReadOnlyCollection([
             'radus' => 80,
         ]));
