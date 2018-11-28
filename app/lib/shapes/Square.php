@@ -14,8 +14,8 @@ use USC\lib\interfaces\ReadOnlyCollection;
 
 class Square implements Shape
 {
-    public $size = 15;
-    public $color = '#CCCCCC';
+    private $size = 15;
+    private $color = '#CCCCCC';
 
     public function __construct(ReadOnlyCollection $params)
     {
