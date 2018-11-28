@@ -14,8 +14,8 @@ use USC\lib\interfaces\ReadOnlyCollection;
 
 class Circle implements interfaces\Shape
 {
-    public $radius = 10;
-    public $color = '#FF0000';
+    private $radius = 10;
+    private $color = '#FF0000';
 
     public function __construct(ReadOnlyCollection $params)
     {

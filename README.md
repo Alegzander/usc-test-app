@@ -14,7 +14,7 @@ It accepts post request in json format like:
 }
 ```
 
-App can run on PHP version 5.5+
+**App can run on PHP version 5.5+**
 
 ## Getting started
 
@@ -47,7 +47,7 @@ bootstrap file for php dev server.
 ## Running tests
 
 With docker just exec phpunit:
-`docker exec -ti usc vendor/bin/phpunit`
+`docker exec -ti usc vendor/bin/phpunit tests`
 
 ## How to test application
 
